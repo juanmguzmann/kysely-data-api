@@ -126,9 +126,7 @@ class DataApiConnection implements DatabaseConnection {
 
             if (typeof value === "string" && typeName) {
               const typeNameSafe = typeName.toLocaleLowerCase();
-              if (typeNameSafe === "date") {
-                value = value
-              } else if (typeNameSafe === "timestamp") {
+              if (typeNameSafe === "timestamp") {
                 value = new Date(value);
               } else if (typeNameSafe === "timestamptz") {
                 value = new Date(`${value}Z`);
